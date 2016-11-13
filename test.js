@@ -1,21 +1,9 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module mdast-util-compact
- * @fileoverview Test suite for `mdast-util-compact`.
- */
-
 'use strict';
 
-/* eslint-env node */
-
-/* Dependencies. */
 var test = require('tape');
 var u = require('unist-builder');
 var compact = require('./index.js');
 
-/* Tests. */
 test('compact()', function (t) {
   t.same(
     compact(u('paragraph', [

@@ -1,14 +1,4 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module mdast:util:compact
- * @fileoverview Make an MDAST tree compact.
- */
-
 'use strict';
-
-/* eslint-env commonjs */
 
 /* Dependencies. */
 var visit = require('unist-util-visit');
@@ -17,13 +7,8 @@ var modify = require('unist-util-modify-children');
 /* Expose. */
 module.exports = compact;
 
-/**
- * Make an MDAST tree compact by merging adjacent text
- * nodes.
- *
- * @param {Node} tree - Node.
- * @return {Node} - Node without `position`s.
- */
+/* Make an MDAST tree compact by merging adjacent text
+ * nodes. */
 function compact(tree, commonmark) {
   var modifier = modify(iterator);
 
