@@ -1,13 +1,11 @@
 # mdast-util-compact [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-<!--lint disable heading-increment list-item-spacing-->
-
 Make an [MDAST][] tree compact: collapse text nodes (when possible),
 and blockquotes (in commonmark mode).
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install mdast-util-compact
@@ -15,30 +13,22 @@ npm install mdast-util-compact
 
 ## Usage
 
-Dependencies:
-
 ```javascript
 var u = require('unist-builder');
 var compact = require('mdast-util-compact');
-```
 
-Tree:
-
-```javascript
 var tree = u('strong', [
   u('text', 'alpha'),
   u('text', ' '),
   u('text', 'bravo')
 ]);
-```
 
-Compact:
-
-```javascript
 compact(tree);
+
+console.log(tree);
 ```
 
-`tree` now yields:
+Yields:
 
 ```js
 { type: 'strong',
@@ -73,7 +63,7 @@ The given `tree`.
 
 [codecov]: https://codecov.io/github/wooorm/mdast-util-compact
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
