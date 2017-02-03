@@ -55,13 +55,13 @@ The given `tree`.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/mdast-util-compact.svg
+[travis-badge]: https://img.shields.io/travis/syntax-tree/mdast-util-compact.svg
 
-[travis]: https://travis-ci.org/wooorm/mdast-util-compact
+[travis]: https://travis-ci.org/syntax-tree/mdast-util-compact
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/mdast-util-compact.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/mdast-util-compact.svg
 
-[codecov]: https://codecov.io/github/wooorm/mdast-util-compact
+[codecov]: https://codecov.io/github/syntax-tree/mdast-util-compact
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -69,4 +69,4 @@ The given `tree`.
 
 [author]: http://wooorm.com
 
-[mdast]: https://github.com/wooorm/mdast
+[mdast]: https://github.com/syntax-tree/mdast
