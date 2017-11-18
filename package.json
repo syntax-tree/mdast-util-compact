@@ -9,14 +9,14 @@
     "compact",
     "node"
   ],
-  "files": [
-    "index.js"
-  ],
-  "repository": "https://github.com/syntax-tree/mdast-util-compact",
+  "repository": "syntax-tree/mdast-util-compact",
   "bugs": "https://github.com/syntax-tree/mdast-util-compact/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
   ],
   "dependencies": {
     "unist-util-modify-children": "^1.0.0",
