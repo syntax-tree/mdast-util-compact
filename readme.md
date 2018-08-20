@@ -14,18 +14,14 @@ npm install mdast-util-compact
 ## Usage
 
 ```javascript
-var u = require('unist-builder');
-var compact = require('mdast-util-compact');
+var u = require('unist-builder')
+var compact = require('mdast-util-compact')
 
-var tree = u('strong', [
-  u('text', 'alpha'),
-  u('text', ' '),
-  u('text', 'bravo')
-]);
+var tree = u('strong', [u('text', 'alpha'), u('text', ' '), u('text', 'bravo')])
 
-compact(tree);
+compact(tree)
 
-console.log(tree);
+console.log(tree)
 ```
 
 Yields:
