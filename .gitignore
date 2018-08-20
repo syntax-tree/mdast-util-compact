@@ -5,3 +5,4 @@ coverage/
 node_modules/
 mdast-util-compact.js
 mdast-util-compact.min.js
+yarn.lock
