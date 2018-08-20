@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var u = require('unist-builder');
-var compact = require('./index.js');
+var compact = require('.');
 
 test('compact()', function (t) {
   t.same(
