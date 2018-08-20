@@ -19,7 +19,6 @@
     "index.js"
   ],
   "dependencies": {
-    "unist-util-modify-children": "^1.0.0",
     "unist-util-visit": "^1.1.0"
   },
   "devDependencies": {

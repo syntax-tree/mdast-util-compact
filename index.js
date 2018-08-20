@@ -1,26 +1,17 @@
 'use strict'
 
 var visit = require('unist-util-visit')
-var modify = require('unist-util-modify-children')
 
 module.exports = compact
 
 /* Make an MDAST tree compact by merging adjacent text nodes. */
 function compact(tree, commonmark) {
-  var modifier = modify(iterator)
-
   visit(tree, visitor)
 
   return tree
 
-  function visitor(node) {
-    if (node.children) {
-      modifier(node)
-    }
-  }
-
-  function iterator(child, index, parent) {
-    var siblings = parent.children
+  function visitor(child, index, parent) {
+    var siblings = parent ? parent.children : []
     var prev = index && siblings[index - 1]
 
     if (
