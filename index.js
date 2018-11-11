@@ -4,7 +4,7 @@ var visit = require('unist-util-visit')
 
 module.exports = compact
 
-/* Make an MDAST tree compact by merging adjacent text nodes. */
+/* Make an mdast tree compact by merging adjacent text nodes. */
 function compact(tree, commonmark) {
   visit(tree, visitor)
 

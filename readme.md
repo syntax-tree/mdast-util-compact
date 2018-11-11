@@ -1,6 +1,6 @@
 # mdast-util-compact [![Build][build-badge]][build] [![Coverage][coverage-badge]][coverage] [![Downloads][downloads-badge]][downloads] [![Chat][chat-badge]][chat]
 
-Make an [MDAST][] tree compact: collapse text nodes (when possible),
+Make [mdast][] trees compact: collapse text nodes (when possible),
 and blockquotes (in commonmark mode).
 
 ## Installation
