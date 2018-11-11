@@ -1,4 +1,4 @@
-# mdast-util-compact [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# mdast-util-compact [![Build][build-badge]][build] [![Coverage][coverage-badge]][coverage] [![Downloads][downloads-badge]][downloads] [![Chat][chat-badge]][chat]
 
 Make an [MDAST][] tree compact: collapse text nodes (when possible),
 and blockquotes (in commonmark mode).
@@ -59,13 +59,21 @@ repository, organisation, or community you agree to abide by its terms.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/syntax-tree/mdast-util-compact.svg
+[build-badge]: https://img.shields.io/travis/syntax-tree/mdast-util-compact.svg
 
-[travis]: https://travis-ci.org/syntax-tree/mdast-util-compact
+[build]: https://travis-ci.org/syntax-tree/mdast-util-compact
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/mdast-util-compact.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/mdast-util-compact.svg
 
-[codecov]: https://codecov.io/github/syntax-tree/mdast-util-compact
+[coverage]: https://codecov.io/github/syntax-tree/mdast-util-compact
+
+[downloads-badge]: https://img.shields.io/npm/dm/mdast-util-compact.svg
+
+[downloads]: https://www.npmjs.com/package/mdast-util-compact
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/remark
 
 [npm]: https://docs.npmjs.com/cli/install
 
