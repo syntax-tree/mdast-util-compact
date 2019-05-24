@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-- lts/boron
-- node
+  - lts/dubnium
+  - node
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
@@ -9,7 +9,7 @@ deploy:
   api_key:
     secure: d7LBop1GU2o2OQ7KZOn3WMADoEWB2KA/Q4BAUvJN6niHgYgqp83UIbURv5qc0aSL4LGoQEId3vQT4NFtUcPRWuBsgWMIzeQvfxgB0n2RHzpsbwH8JJUVn7MbG9eUgNMa4/PAjUjBLjXxnZRtAP3NLscE0N4Ix69ts6l0hM61F2FJToWYUmGLvZjsGAgPWvcVUfSIclMzSQUfWXhED72vQ21iwBONFlHD0TicrUgr/c+SvmgumN7PHEWLgcXY+kQbDKAopLEuPNMXWo8XMucYbHTsdpbZQfl0QuP5OpUn6HczCAhv+yxgcMNvE2y3GPTlDBkVFwVafoUQ4TlCWL/SNoa6KlkX0iYqw6waJVv5leowhjt8FzNbM5cF2Zft5/KV3W3qrIV+6MaJzP5XVDG+CRITv+/iHkvZRVYgOoplT1s3oYPNnJ/oCYqSttYR/sh50rJ/36R32nrD+dP8hO8VDwwexDmPzoyaRSfWJca/bcNHncXeMlmBSYlPXdzBPNB8vQ5ue5W8ek3heWG31Fp6Tm/mX8dTL90XaboU6eLR5eFJNOdsfZiI4FA/dksXXG1Z5NCO9dKDSwcRa1TzVYyQ/FNICemK0weJGhWMfikP+ja62cCcYyus1rAxPbC36lRv9QRvCc5vMqN+KPJSZFwzxes5c/sr7ZTMjxfPmehEA5Y=
   file:
-    - "mdast-util-compact.js"
-    - "mdast-util-compact.min.js"
+    - 'mdast-util-compact.js'
+    - 'mdast-util-compact.min.js'
   on:
     tags: true
