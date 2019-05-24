@@ -1,19 +1,27 @@
-# mdast-util-compact [![Build][build-badge]][build] [![Coverage][coverage-badge]][coverage] [![Downloads][downloads-badge]][downloads] [![Chat][chat-badge]][chat]
+# mdast-util-compact
 
-Make [mdast][] trees compact: collapse text nodes (when possible),
-and blockquotes (in commonmark mode).
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
+[![Sponsors][sponsors-badge]][collective]
+[![Backers][backers-badge]][collective]
+[![Chat][chat-badge]][chat]
 
-## Installation
+[**mdast**][mdast] utility to make trees compact: collapse text nodes (when
+possible) and blockquotes (in commonmark mode).
+
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install mdast-util-compact
 ```
 
 ## Usage
 
-```javascript
+```js
 var u = require('unist-builder')
 var compact = require('mdast-util-compact')
 
@@ -35,11 +43,11 @@ Yields:
 
 ### `compact(tree[, commonmark])`
 
-Visit the tree and collapse nodes.  Combines adjacent text nodes (but
-not when they represent entities or escapes).  If `commonmark` is `true`,
-collapses `blockquote` nodes.
+Walk the [tree][] and collapse nodes.
+Combines adjacent [text][]s (but not when they represent entities or escapes).
+If `commonmark` is `true`, collapses [blockquote][]s.
 
-Handles positional information properly.
+Handles [positional information][position-information] properly.
 
 ###### Returns
 
@@ -47,11 +55,13 @@ The given `tree`.
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/mdast`][contributing] for ways to get
+See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
 started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
@@ -71,9 +81,19 @@ repository, organisation, or community you agree to abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/mdast-util-compact
 
+[size-badge]: https://img.shields.io/bundlephobia/minzip/mdast-util-compact.svg
+
+[size]: https://bundlephobia.com/result?p=mdast-util-compact
+
+[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
+
+[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+
+[collective]: https://opencollective.com/unified
+
 [chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
 
-[chat]: https://spectrum.chat/unified/remark
+[chat]: https://spectrum.chat/unified/syntax-tree
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -81,8 +101,18 @@ repository, organisation, or community you agree to abide by its terms.
 
 [author]: https://wooorm.com
 
+[contributing]: https://github.com/syntax-tree/.github/blob/master/contributing.md
+
+[support]: https://github.com/syntax-tree/.github/blob/master/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/master/code-of-conduct.md
+
 [mdast]: https://github.com/syntax-tree/mdast
 
-[contributing]: https://github.com/syntax-tree/mdast/blob/master/contributing.md
+[tree]: https://github.com/syntax-tree/unist#tree
 
-[coc]: https://github.com/syntax-tree/mdast/blob/master/code-of-conduct.md
+[position-information]: https://github.com/syntax-tree/unist#positional-information
+
+[text]: https://github.com/syntax-tree/mdast#text
+
+[blockquote]: https://github.com/syntax-tree/mdast#blockquote
