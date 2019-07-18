@@ -53,6 +53,11 @@ Handles [positional information][position-information] properly.
 
 The given `tree`.
 
+## Security
+
+Use of `mdast-util-compact` does not involve [**hast**][hast] or user content
+so there are no openings for [cross-site scripting (XSS)][xss] attacks.
+
 ## Contribute
 
 See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
@@ -116,3 +121,7 @@ abide by its terms.
 [text]: https://github.com/syntax-tree/mdast#text
 
 [blockquote]: https://github.com/syntax-tree/mdast#blockquote
+
+[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[hast]: https://github.com/syntax-tree/hast
