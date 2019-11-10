@@ -1,6 +1,6 @@
 {
   "name": "mdast-util-compact",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Make an mdast tree compact",
   "license": "MIT",
   "keywords": [
