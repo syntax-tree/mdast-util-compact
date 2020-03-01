@@ -58,6 +58,11 @@ The given `tree`.
 Use of `mdast-util-compact` does not involve [**hast**][hast] or user content
 so there are no openings for [cross-site scripting (XSS)][xss] attacks.
 
+## Related
+
+*   [`mdast-squeeze-paragraphs`](https://github.com/syntax-tree/mdast-squeeze-paragraphs)
+    — remove empty paragraphs
+
 ## Contribute
 
 See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
