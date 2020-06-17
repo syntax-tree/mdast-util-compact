@@ -12,26 +12,26 @@ function compact(tree, commonmark) {
 
   function visitor(child, index, parent) {
     var siblings = parent ? parent.children : []
-    var prev = index && siblings[index - 1]
+    var previous = index && siblings[index - 1]
 
     if (
-      prev &&
-      child.type === prev.type &&
-      mergeable(prev, commonmark) &&
+      previous &&
+      child.type === previous.type &&
+      mergeable(previous, commonmark) &&
       mergeable(child, commonmark)
     ) {
       if (child.value) {
-        prev.value += child.value
+        previous.value += child.value
       }
 
       if (child.children) {
-        prev.children = prev.children.concat(child.children)
+        previous.children = previous.children.concat(child.children)
       }
 
       siblings.splice(index, 1)
 
-      if (prev.position && child.position) {
-        prev.position.end = child.position.end
+      if (previous.position && child.position) {
+        previous.position.end = child.position.end
       }
 
       return index

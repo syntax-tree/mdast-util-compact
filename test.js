@@ -4,7 +4,7 @@ var test = require('tape')
 var u = require('unist-builder')
 var compact = require('.')
 
-test('compact()', function(t) {
+test('compact()', function (t) {
   t.same(
     compact(
       u('paragraph', [u('text', 'alpha'), u('text', ' '), u('text', 'bravo')])
