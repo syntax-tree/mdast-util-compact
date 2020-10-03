@@ -5,7 +5,7 @@ var visit = require('unist-util-visit')
 module.exports = compact
 
 // Make an mdast tree compact by merging adjacent text nodes.
-function compact(tree, commonmark) {
+function compact(tree) {
   visit(tree, visitor)
 
   return tree
@@ -17,8 +17,7 @@ function compact(tree, commonmark) {
     if (
       previous &&
       child.type === previous.type &&
-      mergeable(previous, commonmark) &&
-      mergeable(child, commonmark)
+      (child.type === 'text' || child.type === 'blockquote')
     ) {
       if (child.value) {
         previous.value += child.value
@@ -37,25 +36,4 @@ function compact(tree, commonmark) {
       return index
     }
   }
-}
-
-function mergeable(node, commonmark) {
-  var start
-  var end
-
-  if (node.type === 'text') {
-    if (!node.position) {
-      return true
-    }
-
-    start = node.position.start
-    end = node.position.end
-
-    // Only merge nodes which occupy the same size as their `value`.
-    return (
-      start.line !== end.line || end.column - start.column === node.value.length
-    )
-  }
-
-  return commonmark && node.type === 'blockquote'
 }

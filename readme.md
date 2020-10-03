@@ -8,8 +8,8 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**mdast**][mdast] utility to make trees compact: collapse text nodes (when
-possible) and blockquotes (in commonmark mode).
+[**mdast**][mdast] utility to make trees compact: collapse adjacent text nodes
+and blockquotes.
 
 ## Install
 
@@ -41,11 +41,10 @@ Yields:
 
 ## API
 
-### `compact(tree[, commonmark])`
+### `compact(tree)`
 
 Walk the [tree][] and collapse nodes.
-Combines adjacent [text][]s (but not when they represent entities or escapes).
-If `commonmark` is `true`, collapses [blockquote][]s.
+Combines adjacent [text][]s and collapses [blockquote][]s.
 
 Handles [positional information][position-information] properly.
 
