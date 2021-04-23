@@ -1,11 +1,7 @@
-'use strict'
-
-var visit = require('unist-util-visit')
-
-module.exports = compact
+import {visit} from 'unist-util-visit'
 
 // Make an mdast tree compact by merging adjacent text nodes.
-function compact(tree) {
+export function compact(tree) {
   visit(tree, visitor)
 
   return tree

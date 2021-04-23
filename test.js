@@ -1,8 +1,6 @@
-'use strict'
-
-var test = require('tape')
-var u = require('unist-builder')
-var compact = require('.')
+import test from 'tape'
+import {u} from 'unist-builder'
+import {compact} from './index.js'
 
 test('compact()', function (t) {
   t.same(

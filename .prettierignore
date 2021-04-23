@@ -1,5 +1,2 @@
 coverage/
-mdast-util-compact.js
-mdast-util-compact.min.js
-*.json
 *.md

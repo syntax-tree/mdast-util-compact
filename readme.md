@@ -13,6 +13,9 @@ and blockquotes.
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -22,8 +25,8 @@ npm install mdast-util-compact
 ## Use
 
 ```js
-var u = require('unist-builder')
-var compact = require('mdast-util-compact')
+import {u} from 'unist-builder'
+import {compact} from 'mdast-util-compact'
 
 var tree = u('strong', [u('text', 'alpha'), u('text', ' '), u('text', 'bravo')])
 
@@ -35,11 +38,16 @@ console.log(tree)
 Yields:
 
 ```js
-{ type: 'strong',
-  children: [ { type: 'text', value: 'alpha bravo' } ] }
+{
+  type: 'strong',
+  children: [ { type: 'text', value: 'alpha bravo' } ]
+}
 ```
 
 ## API
+
+This package exports the following identifiers: `compact`.
+There is no default export.
 
 ### `compact(tree)`
 
