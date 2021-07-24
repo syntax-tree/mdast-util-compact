@@ -18,8 +18,8 @@ export function compact(tree) {
 
   /** @type {import('unist-util-visit').Visitor<Node>} */
   function visitor(child, index, parent) {
-    var siblings = parent ? parent.children : []
-    var previous = index && siblings[index - 1]
+    const siblings = parent ? parent.children : []
+    const previous = index && siblings[index - 1]
 
     if (
       (child.type === 'text' || child.type === 'blockquote') &&

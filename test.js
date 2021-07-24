@@ -2,7 +2,7 @@ import test from 'tape'
 import {u} from 'unist-builder'
 import {compact} from './index.js'
 
-test('compact()', function (t) {
+test('compact()', (t) => {
   t.same(
     compact(
       u('paragraph', [u('text', 'alpha'), u('text', ' '), u('text', 'bravo')])

@@ -28,7 +28,7 @@ npm install mdast-util-compact
 import {u} from 'unist-builder'
 import {compact} from 'mdast-util-compact'
 
-var tree = u('strong', [u('text', 'alpha'), u('text', ' '), u('text', 'bravo')])
+const tree = u('strong', [u('text', 'alpha'), u('text', ' '), u('text', 'bravo')])
 
 compact(tree)
 
