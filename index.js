@@ -1,6 +1,5 @@
 /**
- * @typedef {import('unist').Node} Node
- * @typedef {import('unist-util-visit').Visitor<Node>} Visitor
+ * @typedef {import('mdast').Content} Node
  */
 
 import {visit} from 'unist-util-visit'
@@ -17,22 +16,22 @@ export function compact(tree) {
 
   return tree
 
-  /** @type {Visitor} */
+  /** @type {import('unist-util-visit').Visitor<Node>} */
   function visitor(child, index, parent) {
     var siblings = parent ? parent.children : []
     var previous = index && siblings[index - 1]
 
     if (
+      (child.type === 'text' || child.type === 'blockquote') &&
       previous &&
-      child.type === previous.type &&
-      (child.type === 'text' || child.type === 'blockquote')
+      child.type === previous.type
     ) {
-      if (child.value) {
+      if ('value' in child) {
         // @ts-ignore must be text.
         previous.value += child.value
       }
 
-      if (child.children) {
+      if ('children' in child) {
         // @ts-ignore must be block quote.
         previous.children = previous.children.concat(child.children)
       }
