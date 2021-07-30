@@ -1,37 +1,33 @@
 /**
- * @typedef {import('mdast').Content|import('mdast').Root} Node
+ * @typedef {import('mdast').Content|import('mdast').Root} MdastNode
  */
 
 import {visit} from 'unist-util-visit'
 
 /**
- * Make an mdast tree compact by merging adjacent text nodes.
+ * Make an mdast tree compact by merging adjacent text nodes and block quotes.
  *
- * @template {Node} T
- * @param {T} tree
- * @returns {T}
+ * @template {MdastNode} Tree
+ * @param {Tree} tree
+ * @returns {Tree}
  */
 export function compact(tree) {
-  visit(
-    tree,
-    /** @type {import('unist-util-visit').Visitor<Node>} */
-    // @ts-expect-error: fine.
-    (child, index, parent) => {
-      if (
-        parent &&
-        index &&
-        (child.type === 'text' || child.type === 'blockquote') &&
-        child.type === parent.children[index - 1].type
-      ) {
-        const previous = parent.children[index - 1]
+  visit(tree, (child, index, parent) => {
+    if (
+      parent &&
+      index &&
+      (child.type === 'text' || child.type === 'blockquote')
+    ) {
+      const previous = parent.children[index - 1]
 
+      if (previous.type === child.type) {
         if ('value' in child) {
-          // @ts-expect-error must be text.
+          // @ts-expect-error `previous` has the same type as `child`.
           previous.value += child.value
         }
 
         if ('children' in child) {
-          // @ts-expect-error must be block quote.
+          // @ts-expect-error `previous` has the same type as `child`.
           previous.children = previous.children.concat(child.children)
         }
 
@@ -44,7 +40,7 @@ export function compact(tree) {
         return index
       }
     }
-  )
+  })
 
   return tree
 }
