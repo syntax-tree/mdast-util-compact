@@ -1,5 +1,5 @@
 /**
- * @typedef {import('mdast').Content|import('mdast').Root} MdastNode
+ * @typedef {import('mdast').Content|import('mdast').Root} Node
  */
 
 import {visit} from 'unist-util-visit'
@@ -7,12 +7,22 @@ import {visit} from 'unist-util-visit'
 /**
  * Make an mdast tree compact by merging adjacent text nodes and block quotes.
  *
- * @template {MdastNode} Tree
+ * @template {Node} Tree
  * @param {Tree} tree
  * @returns {Tree}
  */
 export function compact(tree) {
-  visit(tree, (child, index, parent) => {
+  // @ts-expect-error: hush, TS.
+  visit(tree, visitor)
+
+  return tree
+
+  /**
+   * @param {import('mdast').Content} child
+   * @param {number} index
+   * @param {Extract<Node, import('mdast').Parent>} parent
+   */
+  function visitor(child, index, parent) {
     if (
       parent &&
       index &&
@@ -40,7 +50,5 @@ export function compact(tree) {
         return index
       }
     }
-  })
-
-  return tree
+  }
 }
