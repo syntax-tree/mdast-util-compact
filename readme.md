@@ -8,18 +8,40 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**mdast**][mdast] utility to make trees compact: collapse adjacent text nodes
-and blockquotes.
+[mdast][] utility to make trees compact by collapsing adjacent text nodes and
+blockquotes.
+
+## What is this?
+
+This package is a utility that lets you make a tree, after changes, more similar
+to how it would be parsed.
+
+## When should I use this?
+
+Probably never!
+You should try and keep your trees clean yourself.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
 npm install mdast-util-compact
+```
+
+In Deno with [`esm.sh`][esmsh]:
+
+```js
+import {compact} from 'https://esm.sh/mdast-util-compact@4'
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import {compact} from 'https://esm.sh/mdast-util-compact@4?bundle'
+</script>
 ```
 
 ## Use
@@ -46,24 +68,35 @@ Yields:
 
 ## API
 
-This package exports the following identifiers: `compact`.
+This package exports the identifier `compact`.
 There is no default export.
 
 ### `compact(tree)`
 
-Walk the [tree][] and collapse nodes.
-Combines adjacent [text][]s and collapses [blockquote][]s.
-
+Collapse nodes in `tree` ([`Node`][node]).
+Combines adjacent texts and collapses blockquotes.
 Handles [positional information][position-information] properly.
 
 ###### Returns
 
-The given `tree`.
+The given `tree` ([`Node`][node]).
+
+## Types
+
+This package is fully typed with [TypeScript][].
+There are no additional types exported.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
 
-Use of `mdast-util-compact` does not involve [**hast**][hast] or user content
-so there are no openings for [cross-site scripting (XSS)][xss] attacks.
+Use of `mdast-util-compact` does not involve **[hast][]** or user content so
+there are no openings for [cross-site scripting (XSS)][xss] attacks.
 
 ## Related
 
@@ -72,8 +105,8 @@ so there are no openings for [cross-site scripting (XSS)][xss] attacks.
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
-started.
+See [`contributing.md`][contributing] in [`syntax-tree/.github`][health] for
+ways to get started.
 See [`support.md`][support] for ways to get help.
 
 This project has a [code of conduct][coc].
@@ -114,26 +147,30 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
 [license]: license
 
 [author]: https://wooorm.com
 
-[contributing]: https://github.com/syntax-tree/.github/blob/HEAD/contributing.md
+[health]: https://github.com/syntax-tree/.github
 
-[support]: https://github.com/syntax-tree/.github/blob/HEAD/support.md
+[contributing]: https://github.com/syntax-tree/.github/blob/main/contributing.md
 
-[coc]: https://github.com/syntax-tree/.github/blob/HEAD/code-of-conduct.md
+[support]: https://github.com/syntax-tree/.github/blob/main/support.md
 
-[mdast]: https://github.com/syntax-tree/mdast
+[coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
 
-[tree]: https://github.com/syntax-tree/unist#tree
+[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
 
 [position-information]: https://github.com/syntax-tree/unist#positional-information
 
-[text]: https://github.com/syntax-tree/mdast#text
+[mdast]: https://github.com/syntax-tree/mdast
 
-[blockquote]: https://github.com/syntax-tree/mdast#blockquote
-
-[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+[node]: https://github.com/syntax-tree/mdast#node
 
 [hast]: https://github.com/syntax-tree/hast
