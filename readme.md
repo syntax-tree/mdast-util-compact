@@ -11,6 +11,21 @@
 [mdast][] utility to make trees compact by collapsing adjacent text nodes and
 blockquotes.
 
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`compact(tree)`](#compacttree)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Security](#security)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
 ## What is this?
 
 This package is a utility that lets you make a tree, after changes, more similar
