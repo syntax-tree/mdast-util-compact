@@ -1,9 +1,10 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {u} from 'unist-builder'
 import {compact} from './index.js'
 
-test('compact()', (t) => {
-  t.same(
+test('compact()', () => {
+  assert.deepEqual(
     compact(
       u('paragraph', [u('text', 'alpha'), u('text', ' '), u('text', 'bravo')])
     ),
@@ -11,7 +12,7 @@ test('compact()', (t) => {
     'should compact texts'
   )
 
-  t.same(
+  assert.deepEqual(
     compact(
       u('paragraph', [
         u(
@@ -41,7 +42,7 @@ test('compact()', (t) => {
     'should merge positions'
   )
 
-  t.same(
+  assert.deepEqual(
     compact(
       u('paragraph', [
         u('text', 'at'),
@@ -57,7 +58,7 @@ test('compact()', (t) => {
     'should compact texts with incompatible positions'
   )
 
-  t.same(
+  assert.deepEqual(
     compact(
       u('root', [
         u('blockquote', [u('paragraph', [u('text', 'Alpha.')])]),
@@ -72,6 +73,4 @@ test('compact()', (t) => {
     ]),
     'should compact blockquotes'
   )
-
-  t.end()
 })
