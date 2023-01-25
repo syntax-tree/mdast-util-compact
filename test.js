@@ -2,8 +2,15 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {u} from 'unist-builder'
 import {compact} from './index.js'
+import * as mod from './index.js'
 
-test('compact()', () => {
+test('compact', () => {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['compact'],
+    'should expose the public api'
+  )
+
   assert.deepEqual(
     compact(
       u('paragraph', [u('text', 'alpha'), u('text', ' '), u('text', 'bravo')])
