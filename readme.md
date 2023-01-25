@@ -39,7 +39,7 @@ You should try and keep your trees clean yourself.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install mdast-util-compact
@@ -83,14 +83,17 @@ Yields:
 
 ## API
 
-This package exports the identifier `compact`.
+This package exports the identifier [`compact`][api-compact].
 There is no default export.
 
 ### `compact(tree)`
 
-Collapse nodes in `tree` ([`Node`][node]).
-Combines adjacent texts and collapses blockquotes.
-Handles [positional information][position-information] properly.
+Make an mdast tree compact by merging adjacent text nodes and block quotes.
+
+###### Parameters
+
+*   `tree` ([`Node`][node])
+    — tree to change
 
 ###### Returns
 
@@ -99,13 +102,13 @@ The given `tree` ([`Node`][node]).
 ## Types
 
 This package is fully typed with [TypeScript][].
-There are no additional types exported.
+It exports no additional types.
 
 ## Compatibility
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
@@ -182,10 +185,10 @@ abide by its terms.
 
 [xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
 
-[position-information]: https://github.com/syntax-tree/unist#positional-information
-
 [mdast]: https://github.com/syntax-tree/mdast
 
 [node]: https://github.com/syntax-tree/mdast#node
 
 [hast]: https://github.com/syntax-tree/hast
+
+[api-compact]: #compacttree
