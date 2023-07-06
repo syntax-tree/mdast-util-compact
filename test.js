@@ -11,44 +11,45 @@ test('compact', async function (t) {
   })
 
   await t.test('should compact texts', async function () {
-    assert.deepEqual(
-      compact(
-        u('paragraph', [u('text', 'alpha'), u('text', ' '), u('text', 'bravo')])
-      ),
-      u('paragraph', [u('text', 'alpha bravo')])
-    )
+    const tree = u('paragraph', [
+      u('text', 'alpha'),
+      u('text', ' '),
+      u('text', 'bravo')
+    ])
+
+    compact(tree)
+
+    assert.deepEqual(tree, u('paragraph', [u('text', 'alpha bravo')]))
   })
 
   await t.test('should merge positions', async function () {
-    assert.deepEqual(
-      compact(
-        u('paragraph', [
-          u(
-            'text',
-            {
-              position: {start: {line: 1, column: 1}, end: {line: 1, column: 6}}
-            },
-            'alpha'
-          ),
-          u(
-            'text',
-            {
-              position: {start: {line: 1, column: 6}, end: {line: 1, column: 7}}
-            },
-            ' '
-          ),
-          u(
-            'text',
-            {
-              position: {
-                start: {line: 1, column: 7},
-                end: {line: 1, column: 12}
-              }
-            },
-            'bravo'
-          )
-        ])
+    const tree = u('paragraph', [
+      u(
+        'text',
+        {position: {start: {line: 1, column: 1}, end: {line: 1, column: 6}}},
+        'alpha'
       ),
+      u(
+        'text',
+        {position: {start: {line: 1, column: 6}, end: {line: 1, column: 7}}},
+        ' '
+      ),
+      u(
+        'text',
+        {
+          position: {
+            start: {line: 1, column: 7},
+            end: {line: 1, column: 12}
+          }
+        },
+        'bravo'
+      )
+    ])
+
+    compact(tree)
+
+    assert.deepEqual(
+      tree,
       u('paragraph', [
         u(
           'text',
@@ -62,36 +63,37 @@ test('compact', async function (t) {
   await t.test(
     'should compact texts with incompatible positions',
     async function () {
-      assert.deepEqual(
-        compact(
-          u('paragraph', [
-            u('text', 'at'),
-            u(
-              'text',
-              {
-                position: {
-                  start: {line: 1, column: 3},
-                  end: {line: 1, column: 8}
-                }
-              },
-              '&'
-            ),
-            u('text', 't')
-          ])
+      const tree = u('paragraph', [
+        u('text', 'at'),
+        u(
+          'text',
+          {
+            position: {
+              start: {line: 1, column: 3},
+              end: {line: 1, column: 8}
+            }
+          },
+          '&'
         ),
-        u('paragraph', [u('text', 'at&t')])
-      )
+        u('text', 't')
+      ])
+
+      compact(tree)
+
+      assert.deepEqual(tree, u('paragraph', [u('text', 'at&t')]))
     }
   )
 
   await t.test('should compact blockquotes', async function () {
+    const tree = u('root', [
+      u('blockquote', [u('paragraph', [u('text', 'Alpha.')])]),
+      u('blockquote', [u('paragraph', [u('text', 'Bravo.')])])
+    ])
+
+    compact(tree)
+
     assert.deepEqual(
-      compact(
-        u('root', [
-          u('blockquote', [u('paragraph', [u('text', 'Alpha.')])]),
-          u('blockquote', [u('paragraph', [u('text', 'Bravo.')])])
-        ])
-      ),
+      tree,
       u('root', [
         u('blockquote', [
           u('paragraph', [u('text', 'Alpha.')]),

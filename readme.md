@@ -97,7 +97,7 @@ Make an mdast tree compact by merging adjacent text nodes and block quotes.
 
 ###### Returns
 
-The given `tree` ([`Node`][node]).
+Nothing (`undefined`).
 
 ## Types
 
