@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import {compact} from 'mdast-util-compact'
 import {u} from 'unist-builder'
-import {compact} from './index.js'
 
 test('compact', async function (t) {
   await t.test('should expose the public api', async function () {
-    assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
+    assert.deepEqual(Object.keys(await import('mdast-util-compact')).sort(), [
       'compact'
     ])
   })
