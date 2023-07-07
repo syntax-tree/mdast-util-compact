@@ -48,14 +48,14 @@ npm install mdast-util-compact
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {compact} from 'https://esm.sh/mdast-util-compact@4'
+import {compact} from 'https://esm.sh/mdast-util-compact@5'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {compact} from 'https://esm.sh/mdast-util-compact@4?bundle'
+  import {compact} from 'https://esm.sh/mdast-util-compact@5?bundle'
 </script>
 ```
 
@@ -111,7 +111,7 @@ versions of Node.js.
 
 When we cut a new major release, we drop support for unmaintained versions of
 Node.
-This means we try to keep the current release line, `mdast-util-compact@^4`,
+This means we try to keep the current release line, `mdast-util-compact@^5`,
 compatible with Node.js 16.
 
 ## Security
